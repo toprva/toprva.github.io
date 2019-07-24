@@ -10,6 +10,20 @@ body {
   grid-template-rows: auto;
 }
 
+#mce-responses {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  grid-column: 2/4;
+}
+
+#mce-error-response {
+  color: red;
+}
+
+#mce-success-response {
+  color: green;
+}
 
 .background {
   margin-top: 100px;
@@ -88,7 +102,7 @@ form > input {
   display: grid;
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) {
   .container,
   .background {
     grid-area: 1 / 1 / 5 / 5;
