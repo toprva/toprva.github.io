@@ -72,8 +72,14 @@ form > input[type=email] {
   color: black;
 }
 
+
+form > input[type=text].mce_inline_error,
+form > input[type=email].mce_inline_error {
+  border: 2px solid red;
+}
+
 form > input {
-  grid-column: 2/4;
+  grid-column: 1/5;
   grid-row: auto;
   border: none;
   padding: 1em;
@@ -101,8 +107,11 @@ form > input {
   grid-gap: 0.8em;
   display: grid;
 }
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+  body {
+    grid-template-columns: content;
+  }
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) {
   .container,
   .background {
     grid-area: 1 / 1 / 5 / 5;
@@ -122,17 +131,27 @@ form > input {
   }
 
   form {
-    grid-template-columns: auto;
+    grid-template-columns: minmax(100px, 1fr);
+  }
+
+  form > input[type=text] {
+    grid-row: 1;
+  }
+
+  form > input[type=email] {
+    grid-row: 2;
   }
 
   form > input,
   .button-container {
-    grid-column: auto;
+    grid-column: 1/4;
+    grid-row: 3;
   }
 
   form > input[type=email],
   form > input[type=text],
   .submit-button {
+    grid-column: 1/4;
     font-size: 50px;
   }
 
