@@ -7,7 +7,8 @@
 body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: minmax(100px, 1fr);
+  height: 100%;
 }
 
 #mce-responses {
@@ -26,19 +27,17 @@ body {
 }
 
 .background {
-  margin-top: 100px;
   grid-area: 1 / 1 / 4 / 5;
   align-self: center;
   justify-self: center;
   z-index: -9999;
   background-color: #F5F5F5;
-  height: 80%;
+  height: 50%;
   width: 100%;
 }
 
 .container {
-  margin-top: 100px;
-  grid-area: 2 / 2 / 3 / 4;
+  grid-area: 1 / 2 / 4 / 4;
   align-self: center;
   justify-self: center;
   width: 100%
@@ -46,10 +45,11 @@ body {
 
 .labels {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 h3 {
+  margin-top: 50px;
   margin-bottom: 0;
   font-size: 70px
 }
@@ -63,7 +63,8 @@ form {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-gap: 0.8em;
-  padding: 1.2em;
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
 form > input[type=text],
@@ -115,10 +116,6 @@ form > input {
   .container,
   .background {
     grid-area: 1 / 1 / 5 / 5;
-  }
-
-  .background {
-    height: 100%
   }
 
   h3 {
